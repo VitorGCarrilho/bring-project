@@ -2,7 +2,7 @@ package com.carrilho.vitor.dto;
 
 import com.google.gson.annotations.SerializedName;
 
-class HolderDTO{
+public class HolderDTO{
 	@SerializedName("name")
 	private String name;
 

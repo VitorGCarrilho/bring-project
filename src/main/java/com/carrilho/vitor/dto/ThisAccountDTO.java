@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.google.gson.annotations.SerializedName;
 
-class ThisAccountDTO extends AccountDTO {
+public class ThisAccountDTO extends AccountDTO {
 	@SerializedName("holders")
 	private List<HolderDTO> holders;
 

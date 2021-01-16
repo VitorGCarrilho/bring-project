@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 import com.google.gson.annotations.SerializedName;
 
-class ValueDTO {
+public class ValueDTO {
 	@SerializedName("amount")
 	private BigDecimal amount;
 	

@@ -2,7 +2,7 @@ package com.carrilho.vitor.dto;
 
 import com.google.gson.annotations.SerializedName;
 
-class TransactionDTO {
+public class TransactionDTO {
 	
 	@SerializedName("id")
 	private String id;

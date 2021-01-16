@@ -2,7 +2,7 @@ package com.carrilho.vitor.dto;
 
 import com.google.gson.annotations.SerializedName;
 
-class OtherAccountDTO extends AccountDTO {
+public class OtherAccountDTO extends AccountDTO {
 	@SerializedName("holder")
 	private HolderDTO holder;
 

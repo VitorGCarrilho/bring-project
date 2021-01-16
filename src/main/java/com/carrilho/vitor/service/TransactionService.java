@@ -1,10 +1,13 @@
 package com.carrilho.vitor.service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.carrilho.vitor.client.TransactionClient;
-import com.carrilho.vitor.dto.TransactionsDTO;
+import com.carrilho.vitor.client.response.TransactionResponse;
 
 @Service
 public class TransactionService {
@@ -16,8 +19,13 @@ public class TransactionService {
 		this.transactionClient = transactionClient;
 	}
 	
-	public TransactionsDTO findAll() {
-		return transactionClient.getTransctions();
+	public List<TransactionResponse> getByAccountId(String accountId) {
+		return transactionClient
+				.getTransctions(accountId)
+				.getTransactions()
+				.stream()
+				.map(TransactionResponse::new)
+				.collect(Collectors.toList());
 	}
 
 }

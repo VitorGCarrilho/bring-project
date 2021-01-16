@@ -2,7 +2,7 @@ package com.carrilho.vitor.dto;
 
 import com.google.gson.annotations.SerializedName;
 
-class DetailsDTO {
+public class DetailsDTO {
 	@SerializedName("new_balance")
 	private ValueDTO newBalance;
 	
