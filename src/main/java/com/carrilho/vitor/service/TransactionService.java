@@ -27,5 +27,11 @@ public class TransactionService {
 				.map(TransactionResponse::new)
 				.collect(Collectors.toList());
 	}
+	
+	public List<TransactionResponse> getByAccountIdAndType(String accountId, String Type) {
+		List<TransactionResponse> response = getByAccountId(accountId);
+		response.removeIf(transaction -> !transaction.getTransactionType().equals(Type));
+		return response;		
+	}
 
 }

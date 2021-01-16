@@ -28,7 +28,7 @@ public class TransactionControllerTest {
 	private TransactionController transactionController;
 	
 	@Test
-	public void test() {
+	public void getByIdTest() {
 		// GIVEN
 		String accountId = "10";
 		List<TransactionResponse> transactionList = SampleFactory.sampleTransactionResponseList(accountId, "TYPE_A");
@@ -41,6 +41,25 @@ public class TransactionControllerTest {
 		
 		// THEN
 		verify(transactionService).getByAccountId(accountId);
+		assertEquals(response.getBody(), transactionList);
+		assertEquals(response.getStatusCode(), HttpStatus.OK);		
+	}
+	
+	@Test
+	public void getByIdAndTypeTest() {
+		// GIVEN
+		String accountId = "10";
+		String type = "TYPE_A";
+		List<TransactionResponse> transactionList = SampleFactory.sampleTransactionResponseList(accountId, type);
+		
+		
+		// WHEN
+		when(transactionService.getByAccountIdAndType(accountId, type)).thenReturn(transactionList);
+		ResponseEntity<List<TransactionResponse>> response = transactionController.getTransactionsFilteredByType(accountId, type);
+		
+		
+		// THEN
+		verify(transactionService).getByAccountIdAndType(accountId, type);
 		assertEquals(response.getBody(), transactionList);
 		assertEquals(response.getStatusCode(), HttpStatus.OK);		
 	}

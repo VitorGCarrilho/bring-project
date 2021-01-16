@@ -25,10 +25,17 @@ public class TransactionController {
 		this.transactionService = transctionService;		
 	}
 	
-	@GetMapping("/{accountId}")
+	@GetMapping("/accounts/{accountId}")
 	public ResponseEntity<List<TransactionResponse>> getTransactions(@PathVariable String accountId) {
 		logger.info("receiving hello get");
 		List<TransactionResponse> transactionList = transactionService.getByAccountId(accountId);		
+		return ResponseEntity.ok(transactionList);
+	}
+	
+	@GetMapping("/accounts/{accountId}/type/{transactionType}")
+	public ResponseEntity<List<TransactionResponse>> getTransactionsFilteredByType(@PathVariable String accountId, @PathVariable String transactionType) {
+		logger.info("receiving hello get");
+		List<TransactionResponse> transactionList = transactionService.getByAccountIdAndType(accountId, transactionType);		
 		return ResponseEntity.ok(transactionList);
 	}
 
