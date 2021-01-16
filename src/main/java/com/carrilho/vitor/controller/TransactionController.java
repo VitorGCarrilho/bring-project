@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.carrilho.vitor.dto.TransactionsDTO;
 import com.carrilho.vitor.service.TransactionService;
 
 @RestController
@@ -22,16 +23,9 @@ public class TransactionController {
 	}
 	
 	@GetMapping
-	public ResponseEntity<String> get() {
+	public ResponseEntity<TransactionsDTO> get() {
 		logger.info("receiving hello get");
-		String value = transactionService.findAll();		
-		return ResponseEntity.ok(value);
-	}
-	
-	@GetMapping("teste")
-	public ResponseEntity<String> test() {
-		logger.info("receiving hello get");
-		String value = transactionService.findAll();		
+		TransactionsDTO value = transactionService.findAll();		
 		return ResponseEntity.ok(value);
 	}
 
