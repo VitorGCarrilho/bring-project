@@ -2,7 +2,7 @@ package com.carrilho.vitor.dto;
 
 import com.google.gson.annotations.SerializedName;
 
-public abstract class AccountDTO{
+public class AccountDTO{
 	@SerializedName("id")
 	private String id;
 	
@@ -11,6 +11,9 @@ public abstract class AccountDTO{
 	
 	@SerializedName("metadata")
 	private MetadataDTO metadata;
+	
+	@SerializedName("holder")
+	private HolderDTO holder;
 	
 	public String getId() {
 		return id;
@@ -29,5 +32,13 @@ public abstract class AccountDTO{
 	}
 	public void setMetadata(MetadataDTO metadata) {
 		this.metadata = metadata;
+	}
+	
+	public HolderDTO getHolder() {
+		return holder;
+	}
+
+	public void setHolder(HolderDTO holder) {
+		this.holder = holder;
 	}
 }

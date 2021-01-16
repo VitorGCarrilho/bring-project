@@ -8,27 +8,27 @@ public class TransactionDTO {
 	private String id;
 	
 	@SerializedName("this_account")
-	private ThisAccountDTO thisAccount;
+	private AccountDTO thisAccount;
 	
 	@SerializedName("other_account")
-	private OtherAccountDTO otherAccount;
+	private AccountDTO otherAccount;
 	
 	@SerializedName("details")
 	private DetailsDTO details;
 	
-	public ThisAccountDTO getThisAccount() {
+	public AccountDTO getThisAccount() {
 		return thisAccount;
 	}
 
-	public void setThisAccount(ThisAccountDTO thisAccount) {
+	public void setThisAccount(AccountDTO thisAccount) {
 		this.thisAccount = thisAccount;
 	}
 
-	public OtherAccountDTO getOtherAccount() {
+	public AccountDTO getOtherAccount() {
 		return otherAccount;
 	}
 
-	public void setOtherAccount(OtherAccountDTO otherAccount) {
+	public void setOtherAccount(AccountDTO otherAccount) {
 		this.otherAccount = otherAccount;
 	}
 

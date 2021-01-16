@@ -16,7 +16,7 @@ public class RestControllerAdvice extends ResponseEntityExceptionHandler  {
 
 	@ExceptionHandler(value = { FeignException.class })
 	public ResponseEntity<Object> handleConflict(FeignException ex, WebRequest request) {
-		return handleExceptionInternal(ex, ex.getMessage(), new HttpHeaders(), HttpStatus.FAILED_DEPENDENCY, request);
+		return handleExceptionInternal(ex, ex.getMessage(), new HttpHeaders(), HttpStatus.resolve(ex.status()), request);
 	}
 
 }
