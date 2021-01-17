@@ -37,7 +37,7 @@ in the project folder run the following commands:
 
 ```
 mvn install
-docker image build -t vitorgcarrilho/bring-project ./
+docker image build -t bringGlobal/bring-project ./
 docker container run -it --publish 8080:8080 bringGlobal/bring-project
 ```
 
@@ -47,7 +47,7 @@ if you prefer you can pull the docker image instead of use maven to build the pr
 
 ```
 docker pull vitorgcarrilho/bring-project
-docker container run -it --publish 8080:8080 bringGlobal/bring-project
+docker container run -it --publish 8080:8080 vitorgcarrilho/bring-project
 
 ```
 
