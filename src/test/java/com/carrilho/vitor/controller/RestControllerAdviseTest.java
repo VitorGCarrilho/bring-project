@@ -38,7 +38,7 @@ public class RestControllerAdviseTest {
 		
 		// WHEN
 		
-		ResponseEntity<Object> response = controllerAdvice.handleConflict(ex, webRequest);
+		ResponseEntity<Object> response = controllerAdvice.handleFeignException(ex, webRequest);
 		
 		// THEN
 		
