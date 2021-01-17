@@ -16,6 +16,8 @@ Just using spring mvc with xml configuration (spring boot wasn't allowed to this
 ## SECURITY
 
 Using spring security with basic auth with an in memory user just for the test (Do not deploy production like this)
+user: `user`
+password: `password`
 
 ## RUN LOCALLY
 

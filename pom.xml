@@ -59,6 +59,7 @@
 				<configuration>
 					<excludes>
 						<exclude>**/com/carrilho/vitor/dto/*</exclude>
+						<exclude>**/com/carrilho/vitor/security/*</exclude>
 						<exclude>**/com/carrilho/vitor/config/*</exclude>
 						<exclude>**/com/carrilho/vitor/client/*</exclude>
 					</excludes>
