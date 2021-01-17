@@ -21,6 +21,7 @@
 
 		<!-- Spring MVC -->
 		<spring-framework.version>5.0.0.RELEASE</spring-framework.version>
+		<spring-security.version>5.3.4.RELEASE</spring-security.version>
 
 		<!-- Servlet API -->
 		<servlet.version>3.1.0</servlet.version>
@@ -204,6 +205,22 @@
 			<artifactId>mockito-junit-jupiter</artifactId>
 			<version>2.23.0</version>
 			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${spring-security.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${spring-security.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${spring-security.version}</version>
 		</dependency>
 
 	</dependencies>

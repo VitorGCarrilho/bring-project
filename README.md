@@ -13,6 +13,10 @@ http://localhost:8080/bring-project/swagger-ui.html
 
 Just using spring mvc with xml configuration (spring boot wasn't allowed to this project)
 
+## SECURITY
+
+Using spring security with basic auth with an in memory user just for the test (Do not deploy production like this)
+
 ## RUN LOCALLY
 
 You can run locally in the following ways:
