@@ -1,6 +1,6 @@
 # BRING GLOBAL PROJECT
 
-## API DOCUMENTATION
+## *API DOCUMENTATION*
 
 The api documentation (Swagger Ui) can be accessed in the following url:
 
@@ -17,7 +17,17 @@ Just using spring mvc with xml configuration (spring boot wasn't allowed to this
 
 You can run locally in the following ways:
 
-### BUILD DOCKER IMAGE
+###### BUILD DEPLOYMENT FILE
+
+You can build the deployment file with the following command: 
+
+```
+mvn install
+```
+
+then the war file will be in `target` folder, then you just need to add it to tomcat 8.5
+
+###### BUILD DOCKER IMAGE
 
 in the project folder run the following commands:
 
@@ -27,9 +37,9 @@ docker image build -t vitorgcarrilho/bring-project ./
 docker container run -it --publish 8080:8080 bringGlobal/bring-project
 ```
 
-### PULL IMAGE FROM DOCKER HUB
+###### PULL IMAGE FROM DOCKER HUB
 
-if you prefer you can pull the docker image instead of use maven to build the project 
+if you prefer you can pull the docker image instead of use maven to build the project (https://hub.docker.com/r/vitorgcarrilho/bring-project)
 
 ```
 docker pull vitorgcarrilho/bring-project
