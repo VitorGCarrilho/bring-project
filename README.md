@@ -1,6 +1,6 @@
-#BRING GLOBAL PROJECT
+# BRING GLOBAL PROJECT
 
-##API DOCUMENTATION
+## API DOCUMENTATION
 
 The api documentation (Swagger Ui) can be accessed in the following url:
 
@@ -9,11 +9,11 @@ http://localhost:8080/bring-project/swagger-ui.html
 
 ```
 
-##FRAMEWORK
+## FRAMEWORK
 
 Just using spring mvc with xml configuration (spring boot wasn't allowed to this project)
 
-##RUN LOCALLY
+## RUN LOCALLY
 
 You can run locally in the following ways:
 
