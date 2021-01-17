@@ -13,9 +13,9 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.carrilho.vitor.client.TransactionClient;
-import com.carrilho.vitor.client.domain.TotalAmount;
-import com.carrilho.vitor.client.domain.Transaction;
 import com.carrilho.vitor.controller.helper.SampleFactory;
+import com.carrilho.vitor.domain.TotalAmount;
+import com.carrilho.vitor.domain.Transaction;
 import com.carrilho.vitor.dto.TransactionDTO;
 import com.carrilho.vitor.dto.TransactionsDTO;
 

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import com.carrilho.vitor.client.domain.Transaction;
+import com.carrilho.vitor.domain.Transaction;
 import com.carrilho.vitor.dto.AccountDTO;
 import com.carrilho.vitor.dto.DetailsDTO;
 import com.carrilho.vitor.dto.HolderDTO;

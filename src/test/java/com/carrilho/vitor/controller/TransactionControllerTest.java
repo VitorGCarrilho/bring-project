@@ -14,9 +14,9 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import com.carrilho.vitor.client.domain.TotalAmount;
-import com.carrilho.vitor.client.domain.Transaction;
 import com.carrilho.vitor.controller.helper.SampleFactory;
+import com.carrilho.vitor.domain.TotalAmount;
+import com.carrilho.vitor.domain.Transaction;
 import com.carrilho.vitor.service.TransactionService;
 
 @ExtendWith(MockitoExtension.class)

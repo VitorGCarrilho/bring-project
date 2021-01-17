@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.carrilho.vitor.client.TransactionClient;
-import com.carrilho.vitor.client.domain.TotalAmount;
-import com.carrilho.vitor.client.domain.Transaction;
+import com.carrilho.vitor.domain.TotalAmount;
+import com.carrilho.vitor.domain.Transaction;
 
 @Service
 public class TransactionService {

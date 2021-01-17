@@ -8,8 +8,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import com.carrilho.vitor.client.domain.TotalAmount;
-import com.carrilho.vitor.client.domain.Transaction;
 import com.carrilho.vitor.controller.helper.SampleFactory;
 
 @ExtendWith(MockitoExtension.class)

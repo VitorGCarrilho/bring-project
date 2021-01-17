@@ -1,4 +1,4 @@
-package com.carrilho.vitor.client.domain;
+package com.carrilho.vitor.domain;
 
 import java.math.BigDecimal;
 

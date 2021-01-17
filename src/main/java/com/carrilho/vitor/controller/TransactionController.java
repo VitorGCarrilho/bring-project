@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.carrilho.vitor.client.domain.TotalAmount;
-import com.carrilho.vitor.client.domain.Transaction;
+import com.carrilho.vitor.domain.TotalAmount;
+import com.carrilho.vitor.domain.Transaction;
 import com.carrilho.vitor.service.TransactionService;
 
 @RestController
