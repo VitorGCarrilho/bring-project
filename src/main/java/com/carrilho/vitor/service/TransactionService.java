@@ -7,7 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.carrilho.vitor.client.TransactionClient;
-import com.carrilho.vitor.client.response.TransactionResponse;
+import com.carrilho.vitor.client.domain.TotalAmount;
+import com.carrilho.vitor.client.domain.Transaction;
 
 @Service
 public class TransactionService {
@@ -19,19 +20,31 @@ public class TransactionService {
 		this.transactionClient = transactionClient;
 	}
 	
-	public List<TransactionResponse> getByAccountId(String accountId) {
+	public List<Transaction> getByAccountId(String accountId) {
 		return transactionClient
 				.getTransctions(accountId)
 				.getTransactions()
 				.stream()
-				.map(TransactionResponse::new)
+				.map(Transaction::new)
 				.collect(Collectors.toList());
 	}
 	
-	public List<TransactionResponse> getByAccountIdAndType(String accountId, String Type) {
-		List<TransactionResponse> response = getByAccountId(accountId);
+	public List<Transaction> getByAccountIdAndType(String accountId, String Type) {
+		List<Transaction> response = getByAccountId(accountId);
 		response.removeIf(transaction -> !transaction.getTransactionType().equals(Type));
 		return response;		
+	}
+	
+	public TotalAmount getTotalAmount(String accountId, String type) {
+		TotalAmount zeroTotalAmount = new TotalAmount();
+		
+		return transactionClient
+			.getTransctions(accountId)
+			.getTransactions()
+			.stream()
+			.map(Transaction::new)
+			.filter(t -> t.getTransactionType().equals(type))
+			.reduce(zeroTotalAmount, TotalAmount::addTransaction, TotalAmount::sum);
 	}
 
 }

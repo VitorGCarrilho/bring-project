@@ -14,7 +14,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import com.carrilho.vitor.client.response.TransactionResponse;
+import com.carrilho.vitor.client.domain.TotalAmount;
+import com.carrilho.vitor.client.domain.Transaction;
 import com.carrilho.vitor.controller.helper.SampleFactory;
 import com.carrilho.vitor.service.TransactionService;
 
@@ -31,12 +32,12 @@ public class TransactionControllerTest {
 	public void getByIdTest() {
 		// GIVEN
 		String accountId = "10";
-		List<TransactionResponse> transactionList = SampleFactory.sampleTransactionResponseList(accountId, "TYPE_A");
+		List<Transaction> transactionList = SampleFactory.sampleTransactionResponseList(accountId, "TYPE_A");
 		
 		
 		// WHEN
 		when(transactionService.getByAccountId(accountId)).thenReturn(transactionList);
-		ResponseEntity<List<TransactionResponse>> response = transactionController.getTransactions(accountId);
+		ResponseEntity<List<Transaction>> response = transactionController.getTransactions(accountId);
 		
 		
 		// THEN
@@ -50,12 +51,12 @@ public class TransactionControllerTest {
 		// GIVEN
 		String accountId = "10";
 		String type = "TYPE_A";
-		List<TransactionResponse> transactionList = SampleFactory.sampleTransactionResponseList(accountId, type);
+		List<Transaction> transactionList = SampleFactory.sampleTransactionResponseList(accountId, type);
 		
 		
 		// WHEN
 		when(transactionService.getByAccountIdAndType(accountId, type)).thenReturn(transactionList);
-		ResponseEntity<List<TransactionResponse>> response = transactionController.getTransactionsFilteredByType(accountId, type);
+		ResponseEntity<List<Transaction>> response = transactionController.getTransactionsFilteredByType(accountId, type);
 		
 		
 		// THEN
@@ -63,5 +64,26 @@ public class TransactionControllerTest {
 		assertEquals(response.getBody(), transactionList);
 		assertEquals(response.getStatusCode(), HttpStatus.OK);		
 	}
+	
+	@Test
+	public void getTotalAmountTest() {
+		// GIVEN
+		String accountId = "10";
+		String type = "TYPE_A";
+		TotalAmount totalAmount = new TotalAmount();
+		
+		
+		// WHEN
+		when(transactionService.getTotalAmount(accountId, type)).thenReturn(totalAmount);
+		ResponseEntity<TotalAmount> response = transactionController.getTotalAmountFilteredByType(accountId, type);
+		
+		
+		// THEN
+		verify(transactionService).getTotalAmount(accountId, type);
+		assertEquals(response.getBody(), totalAmount);
+		assertEquals(response.getStatusCode(), HttpStatus.OK);		
+	}
+	
+	
 
 }

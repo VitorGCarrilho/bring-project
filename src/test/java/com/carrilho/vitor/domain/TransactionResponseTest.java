@@ -1,4 +1,4 @@
-package com.carrilho.vitor.response;
+package com.carrilho.vitor.domain;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import com.carrilho.vitor.client.response.TransactionResponse;
+import com.carrilho.vitor.client.domain.Transaction;
 import com.carrilho.vitor.controller.helper.SampleFactory;
 import com.carrilho.vitor.dto.TransactionDTO;
 
@@ -21,7 +21,7 @@ public class TransactionResponseTest {
 		TransactionDTO dto = SampleFactory.sampleTransaction(accountId, "TYPE");
 
 		// WHEN
-		TransactionResponse response = new TransactionResponse(dto);
+		Transaction response = new Transaction(dto);
 
 		// THEN
 		assertEquals(dto.getId(), response.getId());
@@ -48,7 +48,7 @@ public class TransactionResponseTest {
 		// THEN		
 		
 		assertDoesNotThrow(() -> {
-			new TransactionResponse(dto);
+			new Transaction(dto);
 		});
 
 	}
@@ -64,7 +64,7 @@ public class TransactionResponseTest {
 		// THEN		
 		
 		assertDoesNotThrow(() -> {
-			new TransactionResponse(dto);
+			new Transaction(dto);
 		});
 
 	}
@@ -80,7 +80,7 @@ public class TransactionResponseTest {
 		// THEN		
 		
 		assertDoesNotThrow(() -> {
-			new TransactionResponse(dto);
+			new Transaction(dto);
 		});
 
 	}
@@ -96,7 +96,7 @@ public class TransactionResponseTest {
 		// THEN		
 		
 		assertDoesNotThrow(() -> {
-			new TransactionResponse(dto);
+			new Transaction(dto);
 		});
 
 	}
@@ -112,7 +112,7 @@ public class TransactionResponseTest {
 		// THEN		
 		
 		assertDoesNotThrow(() -> {
-			new TransactionResponse(dto);
+			new Transaction(dto);
 		});
 
 	}
@@ -128,7 +128,7 @@ public class TransactionResponseTest {
 		// THEN		
 		
 		assertDoesNotThrow(() -> {
-			new TransactionResponse(dto);
+			new Transaction(dto);
 		});
 
 	}

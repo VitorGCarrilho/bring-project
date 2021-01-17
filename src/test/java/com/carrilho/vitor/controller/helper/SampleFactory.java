@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import com.carrilho.vitor.client.response.TransactionResponse;
+import com.carrilho.vitor.client.domain.Transaction;
 import com.carrilho.vitor.dto.AccountDTO;
 import com.carrilho.vitor.dto.DetailsDTO;
 import com.carrilho.vitor.dto.HolderDTO;
@@ -15,6 +15,12 @@ import com.carrilho.vitor.dto.TransactionsDTO;
 import com.carrilho.vitor.dto.ValueDTO;
 
 public class SampleFactory {
+	
+	public static Transaction sampleTransactionResponse(String transactionId, String transactionType, BigDecimal amount) {
+		TransactionDTO dto = sampleTransaction(transactionId, transactionType);
+		dto.getDetails().getValue().setAmount(amount);
+		return new Transaction(dto);
+	}
 	
 	public static TransactionDTO sampleTransaction(String transactionId, String transactionType) {
 		ValueDTO value = new ValueDTO();
@@ -64,8 +70,8 @@ public class SampleFactory {
 		return transactions; 
 	}
 	
-	public static List<TransactionResponse> sampleTransactionResponseList(String transactionId, String transactionType) {
-		return Arrays.asList(new TransactionResponse(sampleTransaction(transactionId, transactionType)));
+	public static List<Transaction> sampleTransactionResponseList(String transactionId, String transactionType) {
+		return Arrays.asList(new Transaction(sampleTransaction(transactionId, transactionType)));
 	}
 
 }

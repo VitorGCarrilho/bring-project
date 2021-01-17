@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.carrilho.vitor.client.response.TransactionResponse;
+import com.carrilho.vitor.client.domain.TotalAmount;
+import com.carrilho.vitor.client.domain.Transaction;
 import com.carrilho.vitor.service.TransactionService;
 
 @RestController
@@ -26,17 +27,24 @@ public class TransactionController {
 	}
 	
 	@GetMapping("/accounts/{accountId}")
-	public ResponseEntity<List<TransactionResponse>> getTransactions(@PathVariable String accountId) {
-		logger.info("receiving hello get");
-		List<TransactionResponse> transactionList = transactionService.getByAccountId(accountId);		
+	public ResponseEntity<List<Transaction>> getTransactions(@PathVariable String accountId) {
+		logger.info("action=getTransactions accountId={}", accountId);
+		List<Transaction> transactionList = transactionService.getByAccountId(accountId);		
 		return ResponseEntity.ok(transactionList);
 	}
 	
 	@GetMapping("/accounts/{accountId}/type/{transactionType}")
-	public ResponseEntity<List<TransactionResponse>> getTransactionsFilteredByType(@PathVariable String accountId, @PathVariable String transactionType) {
-		logger.info("receiving hello get");
-		List<TransactionResponse> transactionList = transactionService.getByAccountIdAndType(accountId, transactionType);		
+	public ResponseEntity<List<Transaction>> getTransactionsFilteredByType(@PathVariable String accountId, @PathVariable String transactionType) {
+		logger.info("action=getTransactionsFilteredByType accountId={} transactionType={}", accountId, transactionType);
+		List<Transaction> transactionList = transactionService.getByAccountIdAndType(accountId, transactionType);		
 		return ResponseEntity.ok(transactionList);
+	}
+	
+	@GetMapping("/accounts/{accountId}/type/{transactionType}/amount")
+	public ResponseEntity<TotalAmount> getTotalAmountFilteredByType(@PathVariable String accountId, @PathVariable String transactionType) {
+		logger.info("action=getTotalAmountFilteredByType accountId={} transactionType={}", accountId, transactionType);
+		TotalAmount totalAmount = transactionService.getTotalAmount(accountId, transactionType);		
+		return ResponseEntity.ok(totalAmount);
 	}
 
 }

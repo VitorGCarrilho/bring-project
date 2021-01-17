@@ -1,11 +1,11 @@
-package com.carrilho.vitor.client.response;
+package com.carrilho.vitor.client.domain;
 
 import java.math.BigDecimal;
 
 import com.carrilho.vitor.dto.AccountDTO;
 import com.carrilho.vitor.dto.TransactionDTO;
 
-public class TransactionResponse {
+public class Transaction {
 	private String id;
 	private String accountId;
 	private String couterPartyAccount;
@@ -18,7 +18,7 @@ public class TransactionResponse {
 	private String transactionType;
 	private String description;
 
-	public TransactionResponse(final TransactionDTO transaction) {
+	public Transaction(final TransactionDTO transaction) {
 		this.id = transaction.getId();
 
 		if (transaction.getThisAccount() != null) {
